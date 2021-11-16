@@ -32,7 +32,7 @@ const ChatBox = ({ user }: any) => {
 		setText("");
 	};
 	return (
-		<div className="p-2 rounded-md">
+		<div className="p-4 runded-md">
 			<div className="flex flex-col-reverse max-w-6xl gap-4 py-2">
 				{data?.map((item) => (
 					<Message
@@ -42,7 +42,7 @@ const ChatBox = ({ user }: any) => {
 					/>
 				))}
 			</div>
-			<form onSubmit={addMessage} className="flex flex-row my-4">
+			<form onSubmit={addMessage} className="flex flex-row mt-4">
 				<input
 					value={text}
 					className="shadow flex-1 appearance-none border rounded  py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
