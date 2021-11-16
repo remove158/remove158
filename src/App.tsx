@@ -1,7 +1,8 @@
 import "./App.css";
 
 function App() {
-	return <div className="App">Hello React.js</div>;
+	const title = "Hello React.js";
+	return <div className="App">{title}</div>;
 }
 
 export default App;
