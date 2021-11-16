@@ -1,8 +1,5 @@
 import React from "react";
 import ChatBox from "./ChatBox";
-import { SignIn, SignOut } from "../utils/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../config/firebase";
 //-------------------------------------------------------------------------//
 // summary :  component types section
 //-------------------------------------------------------------------------//

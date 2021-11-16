@@ -7,9 +7,8 @@ import {
 	serverTimestamp,
 } from "firebase/firestore";
 import { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { auth, db } from "../config/firebase";
+import { db } from "../config/firebase";
 import Message from "./Message";
 
 const ChatBox = ({ user }: any) => {
