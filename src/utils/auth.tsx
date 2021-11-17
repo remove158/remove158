@@ -1,11 +1,40 @@
+import { serverTimestamp, setDoc, updateDoc } from "@firebase/firestore";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { doc } from "firebase/firestore";
 
-const signInWithGoogle = () => {
+import { auth, db } from "../config/firebase";
+
+const signInWithGoogle = async () => {
 	const provider = new GoogleAuthProvider();
-	signInWithPopup(auth, provider);
+	await signInWithPopup(auth, provider);
+
+	auth.onAuthStateChanged(async (user) => {
+		if (user) {
+			const ref = doc(db, "presence", user.uid);
+			setDoc(ref, {
+				...isOnlineForDatabase,
+				photoURL: user.photoURL,
+				displayName: user.displayName,
+			});
+		}
+	});
+};
+window.addEventListener("beforeunload", function (e) {
+	if (auth?.currentUser?.uid) {
+		const ref = doc(db, "presence", auth?.currentUser?.uid || "");
+		updateDoc(ref, isOfflineForDatabase);
+	}
+});
+
+const isOfflineForDatabase = {
+	state: "offline",
+	last_changed: serverTimestamp(),
 };
 
+const isOnlineForDatabase = {
+	state: "online",
+	last_changed: serverTimestamp(),
+};
 const SignIn = () => {
 	return (
 		<>
@@ -23,7 +52,17 @@ const SignOut = () => {
 		<>
 			<button
 				className="bg-red-500  hover:bg-red-700 text-white font-bold px-4 py-2 rounded-full btn btn-red"
-				onClick={() => auth.signOut()}
+				onClick={() => {
+					if (auth?.currentUser?.uid) {
+						const ref = doc(
+							db,
+							"presence",
+							auth?.currentUser?.uid || ""
+						);
+						updateDoc(ref, isOfflineForDatabase);
+						auth.signOut();
+					}
+				}}
 			>
 				Sign out
 			</button>

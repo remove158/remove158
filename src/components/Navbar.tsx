@@ -15,7 +15,7 @@ const Navbar: React.FC<Props> = ({ user }) => {
 	return (
 		<div className="mx-auto p-2 shadow-md flex  justify-between  bg-white border-b-2 ">
 			<div className="text-lg font-bold flex  flex-col  justify-center  px-4 ">
-				PLANGTON
+				Hi, {user.displayName}
 			</div>
 			<div className="px-4">{user ? <SignOut /> : <SignIn />}</div>
 		</div>
