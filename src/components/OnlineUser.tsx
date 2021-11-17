@@ -44,7 +44,7 @@ const OnlineUser: React.FC<Props> = (props) => {
 							<span className="absolute ml-6 mt-6 border-white border   h-2 w-2 rounded-full bg-green-400 "></span>
 						)}
 						<div className="rounded-xl  self-center px-4 flex  flex-wrap content-center font-bold">
-							{e.displayName}
+							{e?.displayName}
 						</div>
 					</div>
 				))}
