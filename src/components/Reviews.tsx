@@ -28,7 +28,7 @@ const Reviews: React.FC<Props> = (props) => {
 	} as any);
 	return (
 		<>
-			<span className="text-4xl mx-4">Reviews</span>
+			<span className="text-4xl ">Reviews</span>
 			{data &&
 				(data as Review[]).map((item: Review, _) => {
 					const { photoURL, comment, timestamp, displayName } = item;

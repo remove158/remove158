@@ -21,7 +21,7 @@ const Comment: React.FC<Props> = ({
 }) => {
 	const postTime = moment(timestamp.seconds * 1000);
 	return (
-		<div className=" bg-gray-100 shadow-md shadow-gray-200 rounded-md m-4 p-8 flex items-center">
+		<div className=" bg-white border shadow-md shadow-gray-200 rounded-md my-4 p-8 flex items-center">
 			<img src={photoURL} className="w-16 h-16 rounded-full" />
 			<div className="flex flex-col ml-8">
 				<span className="text-2xl font-bold">{displayName}</span>
