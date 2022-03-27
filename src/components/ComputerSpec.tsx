@@ -12,7 +12,7 @@ interface Props {
 //-------------------------------------------------------------------------//
 const ComputerSpec: React.FC<Props> = (props) => {
 	return (
-		<div className="bg-white rounded-md h-64 border shadow-md p-4">
+		<div className="bg-white rounded-md h-64 border shadow-md p-4 hover:scale-105 transition-all">
 			Computer {props.spec}
 		</div>
 	);
