@@ -1,9 +1,10 @@
+import Container from "@components/Container";
 import { ReactElement } from "react";
 import Navbar from "../components/Navbar";
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
-	return <div className="bg-red-200">test</div>;
+	return <Container>test</Container>;
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
