@@ -15,13 +15,13 @@ type AppPropsWithLayout = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 	const getLayout = Component.getLayout ?? ((page) => page);
 	return (
-		<>
+		<main className="min-h-screen flex flex-col">
 			<Head>
 				<title>OSM Bot</title>
 				<meta name="theme-color" content="#9ddad5" />
 			</Head>
 			{getLayout(<Component {...pageProps} />)}
-		</>
+		</main>
 	);
 }
 
