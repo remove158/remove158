@@ -27,7 +27,7 @@ const HeroSection: React.FC<Props> = (props) => {
 			<span className="text-4xl mb-6">Status</span>
 			<div className="h-1/2 grid grid-cols-2 md:grid-cols-4 gap-4">
 				{new Array(2).fill(0).map((spec, idx) => (
-					<ComputerSpec spec={idx} />
+					<ComputerSpec key={idx} spec={idx} />
 				))}
 			</div>
 		</div>
