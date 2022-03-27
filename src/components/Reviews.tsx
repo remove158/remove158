@@ -30,10 +30,11 @@ const Reviews: React.FC<Props> = (props) => {
 		<>
 			<span className="text-4xl ">Reviews</span>
 			{data &&
-				(data as Review[]).map((item: Review, _) => {
+				(data as Review[]).map((item: Review, idx) => {
 					const { photoURL, comment, timestamp, displayName } = item;
 					return (
 						<Comment
+							key={idx}
 							photoURL={photoURL}
 							displayName={displayName}
 							comment={comment}
