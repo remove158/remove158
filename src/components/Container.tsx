@@ -11,7 +11,7 @@ interface Props {}
 const Container: React.FC<Props> = (props) => {
 	return (
 		<div className="bg-gray-100 flex-1">
-			<div className="mx-auto max-w-7xl p-2 h-full">{props.children}</div>
+			<div className="mx-auto max-w-7xl h-full">{props.children}</div>
 		</div>
 	);
 };
